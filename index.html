@@ -1,0 +1,16 @@
+<script>
+var params = (function () {
+   var vars = {};
+   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+       vars[key] = value;
+   });
+   return vars;
+})();
+
+for(var key in params) {
+    var element = document.getElementsByName(key)
+    if(element.length != 0){
+     element[0].value = params[key];
+   }
+}
+</script>
